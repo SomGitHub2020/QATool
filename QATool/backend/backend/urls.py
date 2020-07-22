@@ -20,22 +20,19 @@ from django.urls import path, include
 from rest_framework import routers                    # add this
 from customuser import views1 
 from qaconfig import views
+from qalog import views2
 
-router = routers.DefaultRouter()                      # add this
+router = routers.DefaultRouter()                      
 router.register(r'customusers', views1.CustomuserView, 'customuser')
 
-#router1 = routers.DefaultRouter()                      # add this
 router.register(r'qaconfigs', views.QaconfigView, 'qaconfig')
+
+router.register(r'qalogs', views2.QALogView, 'qalog') 
 
 #save
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     url(r'^',views1.ReactAppView.as_view()),
-#    path('apicust/', include(router.urls)),
-#    url(r'^rest-auth/', include('rest_auth.urls')),
-#    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
-#    url(r'^account/', include('allauth.urls')),
-#    url(r'^accounts-rest/registration/account-confirm-email/(?P<key>.+)/$', confirm_email, name='account_confirm_email'),
 ]
 

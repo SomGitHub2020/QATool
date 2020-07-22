@@ -7,7 +7,8 @@ export default class MyTable extends React.Component {
 
 constructor(props) {
     super(props)
-    this.state = { qaconnCollection: [] };
+    this.state = { qaconnCollection: [],
+      defaulttriggerrate: "60", };
  }
 
 
@@ -39,6 +40,16 @@ constructor(props) {
         <div>
            <h1 id='title'>QA System Connections</h1>
            <button  className="btn btn-primary btn-block" onClick={() => this.goToConfig()}>Add QA Connection</button>
+           <div>
+              <table>
+                 <tr>
+                    <td>
+                    <label>Trigger Rate (in Seconds)</label></td><td>
+                    <input type="number" id="triggerfieldid" className="form-control" value={this.state.defaulttriggerrate} maxLength={3}  onChange={this.triggerratehandler} placeholder="Trigger Rate" />
+                  </td>
+                  </tr>
+               </table>
+            </div>
            <table id='students'>
               <thead>
                  <tr>
@@ -51,8 +62,8 @@ constructor(props) {
                     <td>System ID</td>
                     <td>Client</td>
                     <td>Github URL</td>
-                    <td>Trigger Rate</td>
-                    <td>Trigger UOM</td>
+                    <td id="trigger">Trigger UOM</td>
+                    <td id="trigger">Trigger Rate</td>
                  </tr>
               </thead>
               <tbody>

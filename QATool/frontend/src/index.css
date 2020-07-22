@@ -3,6 +3,45 @@
 * {
     box-sizing: border-box;
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+	font-size : 15px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: left;
+	padding: 8px;
+}
+thead{
+	border: 1px solid black;
+	background: #1C8EF9 !important;
+	color:black;
+}
+
+.centerize { 
+    text-align: center;
+}
+
+.Qalog{
+	 text-align: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    height: 13px;
+}
+.rows .row {
+    display: inline-block;
+}
+ 
+.model{
+	text-align: left;
+	min-height:calc(100vh - 330px);
+    max-height: calc(100vh - 330px);
+    overflow-y: auto;
+}
 
 body {
     background: #1C8EF9 !important;
@@ -12,7 +51,15 @@ body {
     font-family: 'Fira Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, label, span {
+h1, h2, h3, h4, h5, h6 {
+	font-size: 50px;
+	width: 100%;
+	font-weight: 500;
+    font-family: 'Fira Sans', sans-serif;
+    color:black;
+}
+
+ label, span {
     font-weight: 500;
     font-family: 'Fira Sans', sans-serif;
 }
@@ -38,11 +85,10 @@ body, html, .App, #root, .auth-wrapper {
     width: 1000px;
     margin: auto;
     background: #ffffff;
-    box-shadow: 0px 28px 160px rgba(34, 35, 58, 0.2);
-    padding: 80px 110px 90px 110px;
-    border-radius: 30px;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 15px;
     transition: all .3s;
-    
 }
 
 .auth-wrapper .form-control:focus {
@@ -60,7 +106,6 @@ body, html, .App, #root, .auth-wrapper {
 .custom-control-label {
     font-weight: 400;
 }
-
 .forgot-password,
 .forgot-password a {
     text-align: right;
@@ -73,7 +118,33 @@ body, html, .App, #root, .auth-wrapper {
     .forgot-password a {
         color: #167bff;
     }
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
+.popup_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  background: white;
+}
 
+#tableContainer{
+	float:left;
+	width:100%;
+	overflow-y: auto;
+	height: 200px;
+}
 
 #title {
     text-align: center;
@@ -107,4 +178,12 @@ body, html, .App, #root, .auth-wrapper {
 
 #phoneflagid {
     width: 200px !important;
+  }
+
+#trigger {
+    display : none;
+}
+
+#triggerfieldid {
+    width: 100px !important;
   }

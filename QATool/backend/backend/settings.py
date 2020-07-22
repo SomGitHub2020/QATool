@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'customuser',
     'qaconfig',
-    'django_filters'
+    'django_filters',
+    'qalog.apps.QalogConfig',
+    'autoproc',
 ]
 
 MIDDLEWARE = [

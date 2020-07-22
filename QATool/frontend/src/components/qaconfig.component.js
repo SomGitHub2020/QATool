@@ -131,9 +131,10 @@ class QAConfig extends Component {
                 "sysid": this.state.sysid,
                 "client": this.state.client,
                 "githuburl": this.state.githuburl,
-                "triggerrate": this.state.triggerrate,
-                "triggeruom": this.state.triggeruom
-      
+                "triggerrate": '60',
+                "triggeruom": 'S'
+                //"triggerrate": this.state.triggerrate,
+                //"triggeruom": this.state.triggeruom      
             }
             axios.post(apiBaseUrl+'/qaconfigs/', payload)
             .then(res => this.goToConfigDetails(res))
@@ -267,7 +268,7 @@ class QAConfig extends Component {
                 </tr>
                 
                 
-                <tr>
+                <tr id="trigger">
                 <td>
                     <div className="form-group">
                     <label>Trigger Rate</label>
@@ -301,7 +302,7 @@ class QAConfig extends Component {
     
         if(data.qaconnid != ""){
 
-            alert("Successfully COnfigured");
+            alert("Successfully Configured");
             this.props.history.push("/table");
             
         }

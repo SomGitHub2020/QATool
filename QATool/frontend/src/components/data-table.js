@@ -35,10 +35,10 @@ class DataTable extends Component {
                 <td>
                     {this.props.obj.githuburl}
                 </td>
-                <td>
+                <td id="trigger">
                     {this.props.obj.triggerrate}
                 </td>
-                <td>
+                <td id="trigger">
                     {this.props.obj.triggeruom}
                 </td>
                 <td>

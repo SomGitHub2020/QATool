@@ -8,7 +8,7 @@ import SignUp from "./components/signup.component";
 import QAConfig from "./components/qaconfig.component";
 import MyTable from "./components/qaconndetails.component";
 import QAConfigEdit from "./components/qaconfigedit.component";
-import DataScheduler from "./components/schedulerdata.component";
+import QALogging from "./components/QALogger.component";
 
 function App() {
     return (<Router>
@@ -38,7 +38,7 @@ function App() {
                         <Route path="/qaconfig" component={QAConfig} />
                         <Route path="/table" component={MyTable} />
                         <Route path="/qaconfigedit" component={QAConfigEdit} /> 
-                        <Route path="/schdata" component={DataScheduler} />  
+                        <Route path="/qalog" component={QALogging} /> 
                     </Switch>
                 </div>
             </div>
