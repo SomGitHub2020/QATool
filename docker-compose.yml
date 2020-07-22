@@ -1,0 +1,49 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres:10.1-alpine
+    restart: always
+#    host: localhost
+    ports:
+     - "5432:5432"
+    environment:
+#      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASS=postgre2020
+      - POSTGRES_DB=postgres
+      - POSTGRES_PORT=5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    depends_on:
+#      - db
+#    ports:
+#      - "5051:80"
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+#      PGADMIN_DEFAULT_PASSWORD: root
+#    restart: always
+
+  web:
+    build: ./QATool/backend
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+#     - frontend
+
+  frontend:
+    build: ./QATool/frontend
+    stdin_open: true
+    command: npm start
+    ports:
+      - "3000:3000"
+    depends_on:
+      - web
+
+volumes:
+  postgres_data:
