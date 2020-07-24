@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  db:
+  db1:
     image: postgres:10.1-alpine
     restart: always
 #    host: localhost
@@ -27,23 +27,23 @@ services:
 #      PGADMIN_DEFAULT_PASSWORD: root
 #    restart: always
 
-  web:
+  web1:
     build: ./QATool/backend
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - db1
 #     - frontend
 
-  frontend:
+  frontend1:
     build: ./QATool/frontend
     stdin_open: true
     command: npm start
     ports:
       - "3000:3000"
     depends_on:
-      - web
+      - web1
 
 volumes:
   postgres_data:
