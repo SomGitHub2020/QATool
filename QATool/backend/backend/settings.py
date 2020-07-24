@@ -105,7 +105,7 @@ DATABASES = {
         'NAME': 'postgres', # database name
         'USER': 'postgres', # user name to access postgresql server
         'PASSWORD': 'postgre2020', # password to access postgresql server
-        'HOST': 'db', # ip server where postgresql is hosted # '127.0.0.1', 
+        'HOST': 'db1', # ip server where postgresql is hosted # '127.0.0.1', 
         'PORT': '5432', # port of the server to listen
     }
 }
